@@ -47,4 +47,4 @@ Si un usuario reporta una caída crítica, la IA procesa el texto y lo estructur
 
 Aquí puedes ver la interfaz en acción clasificando un ticket en tiempo real:
 
-![Ejemplo del Clasificador de Tickets](Clasificador ejemplo.png)
+![Ejemplo del Clasificador de Tickets](demo.png)
