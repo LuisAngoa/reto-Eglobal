@@ -9,7 +9,7 @@ class TicketClassifier:
     def __init__(self):
         # Usamos el modelo Llama 3 70b, temperatura 0 para que no invente cosas, y forzamos formato JSON
         self.llm = ChatGroq(
-            model="llama3-70b-8192", 
+            model="llama-3.3-70b-versatile", 
             temperature=0, 
             model_kwargs={"response_format": {"type": "json_object"}}
         )

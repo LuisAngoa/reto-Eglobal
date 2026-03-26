@@ -4,18 +4,18 @@ from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_groq import ChatGroq
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain.chains import create_retrieval_chain
+from langchain_classic.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import create_retrieval_chain
 from langchain_core.prompts import PromptTemplate
 
 load_dotenv()
 
 class RAGAssistant:
-    def __init__(self, data_path="data/tickets.csv"):
+    def __init__(self, data_path="data/tickets-dataset.csv"):
         self.db_dir = "chroma_db"
         # Usamos un modelo gratuito y local para convertir el texto en números
         self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-        self.llm = ChatGroq(model="llama3-70b-8192", temperature=0.2)
+        self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.2)
         
         # Si la base de datos no existe, la crea leyendo el CSV
         if not os.path.exists(self.db_dir):
